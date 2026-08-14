@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" role="img" aria-label="animated 3D core">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef3f8"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0090c8" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#0090c8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0090c8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+
+  <circle cx="600" cy="180" r="120" fill="url(#core)" filter="url(#softGlow)">
+    <animate attributeName="r" values="110;130;110" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="180" r="6" fill="#0b3a52">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <g stroke="#0aa0d8" fill="none" filter="url(#glow)" opacity="0.8">
+    <g transform="translate(600 180)">
+      <ellipse rx="220" ry="70" stroke-width="1.1" opacity="0.55">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <g transform="translate(600 180)">
+      <ellipse rx="170" ry="55" stroke-width="1" opacity="0.45">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <g transform="translate(600 180)">
+      <ellipse rx="120" ry="120" stroke-width="0.8" opacity="0.32">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <g transform="translate(600 180)">
+      <ellipse rx="260" ry="40" stroke-width="0.8" opacity="0.35">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="17s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+  </g>
+
+  <g fill="#0077a8" filter="url(#glow)">
+    <circle r="3.2">
+      <animateMotion dur="14s" repeatCount="indefinite" path="M600,180 m-220,0 a220,70 0 1,0 440,0 a220,70 0 1,0 -440,0"/>
+    </circle>
+    <circle r="2.6">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M600,180 m-170,0 a170,55 0 1,1 340,0 a170,55 0 1,1 -340,0"/>
+    </circle>
+    <circle r="2.2">
+      <animateMotion dur="20s" repeatCount="indefinite" path="M600,180 m-120,0 a120,120 0 1,0 240,0 a120,120 0 1,0 -240,0"/>
+    </circle>
+  </g>
+
+  <g stroke="#c3d3de" stroke-width="1">
+    <line x1="0" y1="330" x2="1200" y2="330" opacity="0.6"/>
+    <line x1="0" y1="345" x2="1200" y2="345" opacity="0.4"/>
+  </g>
+</svg>
